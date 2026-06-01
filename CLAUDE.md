@@ -31,3 +31,17 @@ Three-file layout with a clear separation of concerns:
 **Period filtering** is date-string based (`YYYY-MM-DD`); `app.py` computes `inicio`/`hoje` strings and passes them to `carregar_dados`.
 
 **yfinance quirk:** when downloading multiple tickers, columns come back as a `MultiIndex`; `carregar_dados` flattens this with `get_level_values(0)` and strips timezone info from the index so Plotly handles dates correctly.
+
+## GitHub
+
+Repositório: https://github.com/JaymeCabral2025/stock-dashboard
+
+**Auto-push configurado:** toda vez que o Claude Code editar ou criar um arquivo via Edit/Write, um hook `PostToolUse` faz commit e push automático para o branch `master`. A configuração fica em `.claude/settings.json`.
+
+Para sincronizar manualmente:
+```powershell
+cd "C:\Users\Jayme Cabral\Documents\claude-project"
+git add -A
+git commit -m "mensagem"
+git push origin master
+```

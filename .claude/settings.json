@@ -1,0 +1,18 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "powershell",
+            "command": "cd 'C:\\Users\\Jayme Cabral\\Documents\\claude-project'; git add -A; $f = git diff --cached --name-only; if ($f) { $msg = 'auto: update ' + ($f -join ', '); git commit -m $msg; git push origin master } 2>$null",
+            "statusMessage": "Sincronizando com GitHub...",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}
